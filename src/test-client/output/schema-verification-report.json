@@ -1,0 +1,222 @@
+{
+  "timestamp": "2025-05-15T11:23:40.682Z",
+  "serverHasDebugLogging": true,
+  "stats": {
+    "total": 35,
+    "hasSchema": 1,
+    "hasEnhancements": 1,
+    "usesEnhancedValidation": 1
+  },
+  "tools": [
+    {
+      "toolName": "cloze_add_company_location",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_add_people_location",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_communication_add_meeting",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_communication_add_note",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_communication_log_email",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_create_company",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_create_company_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_create_people",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_create_people_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_create_project",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_delete_company_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_delete_people",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_delete_people_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_find_company",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_find_nearby_companies",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_find_nearby_people",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_find_people",
+      "hasSchema": true,
+      "hasEnhancements": true,
+      "usesEnhancedValidation": true
+    },
+    {
+      "toolName": "cloze_find_project",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_get_company_locations",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_get_people_locations",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_health_health_check",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_health_health_connection_status",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_health_health_reset_connection",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_list_companies",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_list_projects",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_metadata_get_segments",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_metadata_get_stages",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_metadata_raw",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_read_company_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_read_people_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_update_company",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_update_company_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_update_people",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_update_people_tag",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    },
+    {
+      "toolName": "cloze_update_project",
+      "hasSchema": false,
+      "hasEnhancements": false,
+      "usesEnhancedValidation": false
+    }
+  ]
+}

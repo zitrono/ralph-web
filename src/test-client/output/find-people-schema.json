@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "freeformquery": {
+      "type": "string",
+      "description": "Search query for finding people by name, email, or phone number. For best results with email searches, use the exact email address."
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Filter results by person segment (e.g., \"customer\", \"partner\", \"competitor\")"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Filter results by person stage (e.g., \"lead\", \"future\", \"current\", \"past\", \"out\")"
+    },
+    "pagesize": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Number of results to return per page. Values must be between 1 and 100. Defaults to 10 if not specified."
+    },
+    "pagenumber": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Page number to retrieve. Starts at 1 for the first page. Defaults to 1 if not specified."
+    }
+  },
+  "required": [
+    "freeformquery"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

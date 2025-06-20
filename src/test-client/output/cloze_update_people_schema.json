@@ -1,0 +1,198 @@
+{
+  "type": "object",
+  "properties": {
+    "syncKey": {
+      "type": "string",
+      "description": "Parameter: syncKey",
+      "examples": [
+        "example-syncKey"
+      ]
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "email"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "personal": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Parameter: emails",
+      "examples": [
+        []
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Parameter: name",
+      "examples": [
+        "example-name"
+      ]
+    },
+    "first": {
+      "type": "string",
+      "description": "Parameter: first",
+      "examples": [
+        "example-first"
+      ]
+    },
+    "last": {
+      "type": "string",
+      "description": "Parameter: last",
+      "examples": [
+        "example-last"
+      ]
+    },
+    "phones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "mobile": {
+            "type": "boolean"
+          },
+          "home": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Parameter: phones",
+      "examples": [
+        1,
+        10,
+        100
+      ]
+    },
+    "company": {
+      "type": "string",
+      "description": "Parameter: company",
+      "examples": [
+        "example-company"
+      ]
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Parameter: job_title",
+      "examples": [
+        "example-job_title"
+      ]
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Parameter: segment"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Parameter: stage"
+    },
+    "location": {
+      "type": "string",
+      "description": "Parameter: location",
+      "examples": [
+        "example-location"
+      ]
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "home": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Parameter: addresses",
+      "examples": [
+        []
+      ]
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Parameter: keywords",
+      "examples": [
+        "example-keywords"
+      ]
+    },
+    "customFields": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Parameter: customFields",
+      "examples": [
+        "example-customFields"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

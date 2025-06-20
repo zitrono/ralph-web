@@ -1,0 +1,49 @@
+{
+  "name": "Simple Create and Delete Test (Robust)",
+  "description": "A simple two-step workflow with enhanced validation that creates a person and then deletes them",
+  "variables": {
+    "timestamp": 1747227500000,
+    "testEmail": "test_robust_1747227500000@example.com",
+    "testName": "Test User Robust 1747227500000",
+    "personId": ""
+  },
+  "tests": [
+    {
+      "name": "Create Test Person",
+      "description": "Create a test person with a unique email",
+      "tool": "cloze_create_person",
+      "parameters": {
+        "name": "Test User Robust 1747227500000",
+        "email": "test_robust_1747227500000@example.com",
+        "title": "Tester"
+      },
+      "assertions": [
+        "response.success === true"
+      ],
+      "capture": {
+        "personId": "test-key-fixed"
+      }
+    },
+    {
+      "name": "Delete Test Person",
+      "description": "Delete the test person we just created",
+      "tool": "cloze_delete_person",
+      "parameters": {
+        "id": "{{variables.personId}}"
+      },
+      "assertions": [
+        "response.success === true"
+      ]
+    }
+  ],
+  "config": {
+    "failFast": true,
+    "timeout": 10000,
+    "retries": 0,
+    "captureRawResponses": true,
+    "performanceMonitoring": {
+      "enabled": true,
+      "detailed": true
+    }
+  }
+}

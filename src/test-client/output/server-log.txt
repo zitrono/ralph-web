@@ -1,0 +1,102 @@
+[2025-05-15T13:04:46.461Z][STDERR]: [2025-05-15T13:04:46.460Z] [INFO] Starting Cloze CRM MCP server...
+
+[2025-05-15T13:04:46.463Z][STDERR]: [2025-05-15T13:04:46.461Z] [INFO] Environment: MCP Mode: true, Claude Desktop: true
+[2025-05-15T13:04:46.461Z] [INFO] Creating MCP server
+[2025-05-15T13:04:46.461Z] [INFO] MCP server created successfully
+[2025-05-15T13:04:46.461Z] [INFO] Registering tools with the server (pre-connection)
+
+[2025-05-15T13:04:46.519Z][STDERR]: [2025-05-15T13:04:46.519Z] [INFO] Successfully registered tool: cloze_create_people
+
+[2025-05-15T13:04:46.519Z][STDERR]: [2025-05-15T13:04:46.519Z] [INFO] Registered tool: cloze_create_people
+
+[2025-05-15T13:04:46.520Z][STDERR]: [2025-05-15T13:04:46.520Z] [INFO] Successfully registered tool: cloze_find_people
+
+[2025-05-15T13:04:46.520Z][STDERR]: [2025-05-15T13:04:46.520Z] [INFO] Registered tool: cloze_find_people
+
+[2025-05-15T13:04:46.521Z][STDERR]: [2025-05-15T13:04:46.521Z] [INFO] Successfully registered tool: cloze_update_people
+
+[2025-05-15T13:04:46.521Z][STDERR]: [2025-05-15T13:04:46.521Z] [INFO] Registered tool: cloze_update_people
+
+[2025-05-15T13:04:46.521Z][STDERR]: [2025-05-15T13:04:46.521Z] [INFO] Successfully registered tool: cloze_delete_people
+
+[2025-05-15T13:04:46.521Z][STDERR]: [2025-05-15T13:04:46.521Z] [INFO] Registered tool: cloze_delete_people
+[2025-05-15T13:04:46.521Z] [INFO] Registering tools with the server
+
+[2025-05-15T13:04:46.521Z][STDERR]: [2025-05-15T13:04:46.521Z] [INFO] Creating debug tool for parameter tracing
+
+[2025-05-15T13:04:46.522Z][STDERR]: [2025-05-15T13:04:46.521Z] [INFO] Debug tool created successfully
+[2025-05-15T13:04:46.521Z] [INFO] Environment variables: DEBUG_SCHEMA=true, MCP_MODE=true
+[2025-05-15T13:04:46.521Z] [INFO] Debug mode is ENABLED for schema logging
+
+[2025-05-15T13:04:46.523Z][STDERR]: [2025-05-15T13:04:46.523Z] [INFO] Tools registered successfully
+
+[2025-05-15T13:04:46.525Z][STDERR]: [2025-05-15T13:04:46.525Z] [ERROR] Failed to register tool cloze_create_people: Tool cloze_create_people is already registered
+
+[2025-05-15T13:04:46.525Z][STDERR]: [2025-05-15T13:04:46.525Z] [ERROR] Failed to register tool cloze_find_people: Tool cloze_find_people is already registered
+[2025-05-15T13:04:46.525Z] [ERROR] Failed to register tool cloze_update_people: Tool cloze_update_people is already registered
+[2025-05-15T13:04:46.525Z] [ERROR] Failed to register tool cloze_delete_people: Tool cloze_delete_people is already registered
+
+[2025-05-15T13:04:46.528Z][STDERR]: [2025-05-15T13:04:46.528Z] [INFO] Registering direct tool with direct handler
+
+[2025-05-15T13:04:46.529Z][STDERR]: [2025-05-15T13:04:46.528Z] [INFO] Registered direct tool with enhanced schema: cloze_direct_find_people
+
+[2025-05-15T13:04:46.531Z][STDERR]: [2025-05-15T13:04:46.531Z] [INFO] Successfully registered tool: cloze_read_people_tag
+
+[2025-05-15T13:04:46.531Z][STDERR]: [2025-05-15T13:04:46.531Z] [INFO] Successfully registered tool: cloze_update_people_tag
+
+[2025-05-15T13:04:46.532Z][STDERR]: [2025-05-15T13:04:46.532Z] [INFO] Successfully registered tool: cloze_delete_people_tag
+
+[2025-05-15T13:04:46.533Z][STDERR]: [2025-05-15T13:04:46.533Z] [INFO] Successfully registered tool: cloze_create_people_tag
+
+[2025-05-15T13:04:46.535Z][STDERR]: [2025-05-15T13:04:46.535Z] [INFO] Successfully registered tool: cloze_add_people_location
+
+[2025-05-15T13:04:46.536Z][STDERR]: [2025-05-15T13:04:46.536Z] [INFO] Successfully registered tool: cloze_get_people_locations
+
+[2025-05-15T13:04:46.536Z][STDERR]: [2025-05-15T13:04:46.536Z] [INFO] Successfully registered tool: cloze_find_nearby_people
+
+[2025-05-15T13:04:46.539Z][STDERR]: [2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_create_company
+
+[2025-05-15T13:04:46.539Z][STDERR]: [2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_find_company
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_update_company
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_list_companies
+
+[2025-05-15T13:04:46.539Z][STDERR]: [2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_find_nearby_companies
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_add_company_location
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_read_company_tag
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_update_company_tag
+
+[2025-05-15T13:04:46.539Z][STDERR]: [2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_delete_company_tag
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_create_company_tag
+[2025-05-15T13:04:46.539Z] [INFO] Successfully registered tool: cloze_get_company_locations
+[2025-05-15T13:04:46.539Z] [ERROR] Failed to register tool cloze_find_nearby_companies: Tool cloze_find_nearby_companies is already registered
+[2025-05-15T13:04:46.539Z] [ERROR] Failed to register tool cloze_add_company_location: Tool cloze_add_company_location is already registered
+
+[2025-05-15T13:04:46.540Z][STDERR]: [2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_communication_add_meeting
+
+[2025-05-15T13:04:46.540Z][STDERR]: [2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_communication_add_note
+[2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_communication_log_email
+
+[2025-05-15T13:04:46.540Z][STDERR]: [2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_create_project
+
+[2025-05-15T13:04:46.540Z][STDERR]: [2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_update_project
+
+[2025-05-15T13:04:46.540Z][STDERR]: [2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_list_projects
+[2025-05-15T13:04:46.540Z] [INFO] Successfully registered tool: cloze_find_project
+
+[2025-05-15T13:04:46.541Z][STDERR]: [2025-05-15T13:04:46.541Z] [INFO] Successfully registered tool: cloze_health_health_check
+
+[2025-05-15T13:04:46.541Z][STDERR]: [2025-05-15T13:04:46.541Z] [INFO] Successfully registered tool: cloze_health_health_connection_status
+[2025-05-15T13:04:46.541Z] [INFO] Successfully registered tool: cloze_health_health_reset_connection
+
+[2025-05-15T13:04:46.542Z][STDERR]: [2025-05-15T13:04:46.542Z] [INFO] Successfully registered tool: cloze_metadata_get_segments
+[2025-05-15T13:04:46.542Z] [INFO] Successfully registered tool: cloze_metadata_get_stages
+
+[2025-05-15T13:04:46.542Z][STDERR]: [2025-05-15T13:04:46.542Z] [INFO] Successfully registered tool: cloze_metadata_raw
+
+[2025-05-15T13:04:47.025Z][STDERR]: [2025-05-15T13:04:47.025Z] [INFO] Connecting server to transport
+
+[2025-05-15T13:04:47.025Z][STDERR]: [2025-05-15T13:04:47.025Z] [INFO] Server connected to transport
+[2025-05-15T13:04:47.025Z] [INFO] Cloze CRM MCP server initialized and ready
+
+[2025-05-15T13:04:56.395Z][STDERR]: [2025-05-15T13:04:56.395Z] [INFO] Received SIGTERM signal - ignoring
+

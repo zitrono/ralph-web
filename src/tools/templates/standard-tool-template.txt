@@ -1,0 +1,62 @@
+/**
+ * Cloze $TOOL_NAME Tool
+ * $TOOL_DESCRIPTION
+ */
+
+import { z } from 'zod';
+import { $API_FUNCTION } from '../api/endpoints/$API_MODULE.js';
+import { 
+  createToolHandlerWithEnhancedValidation,
+  $IMPORT_SCHEMAS
+} from './utils/index.js';
+import { enhanceJsonSchema } from './utils/schema_converter.js';
+import logger from '../logging.js';
+
+/**
+ * Parameter schema for the $TOOL_ID tool
+ */
+export const paramSchema = z.object({
+  $PARAMETER_SCHEMA
+});
+
+/**
+ * Schema enhancements to add examples and additional information
+ */
+export const schemaEnhancements = {
+  $SCHEMA_ENHANCEMENTS
+};
+
+/**
+ * $TOOL_SUMMARY
+ */
+const handler = async (params: z.infer<typeof paramSchema>) => {
+  logger.info('$TOOL_ACTION with params:', params);
+  
+  $PARAMETER_PROCESSING
+  
+  // Call the API
+  const response = await $API_FUNCTION($API_PARAMS);
+  
+  logger.info('$SUCCESS_MESSAGE');
+  return response;
+};
+
+$TRANSFORM_RESPONSE_FUNCTION
+
+// Create the tool handler with enhanced validation, error handling, and response formatting
+export default createToolHandlerWithEnhancedValidation(
+  paramSchema, 
+  schemaEnhancements, 
+  handler, 
+  $TRANSFORM_PARAM
+);
+
+/**
+ * Tool metadata for registration
+ */
+export const metadata = {
+  name: '$TOOL_ID',
+  description: `$TOOL_DESCRIPTION
+
+$TOOL_PARAMS_DOC`,
+};

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-05-15T15:05:06.935Z",
+  "context": "FIND_PEOPLE tool called",
+  "data": {
+    "params": {},
+    "timestamp": "2025-05-15T15:05:06.935Z",
+    "paramsType": "object",
+    "paramsIsNull": false,
+    "paramsIsArray": false,
+    "paramsObjectKeys": [],
+    "extraType": "undefined",
+    "extraIsNull": false,
+    "extraObjectKeys": [],
+    "requestInfo": null
+  },
+  "dataType": "object",
+  "isArray": false,
+  "keys": [
+    "params",
+    "extra",
+    "timestamp",
+    "paramsType",
+    "paramsIsNull",
+    "paramsIsArray",
+    "paramsObjectKeys",
+    "extraType",
+    "extraIsNull",
+    "extraObjectKeys",
+    "requestInfo"
+  ]
+}

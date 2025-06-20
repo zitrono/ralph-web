@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-05-15T19:01:03.913Z",
+  "context": "FIND_PEOPLE tool called",
+  "data": {
+    "params": {
+      "freeformquery": "test-efcfd706@example.com"
+    },
+    "timestamp": "2025-05-15T19:01:03.913Z",
+    "paramsType": "object",
+    "paramsIsNull": false,
+    "paramsIsArray": false,
+    "paramsObjectKeys": [
+      "freeformquery"
+    ],
+    "extraType": "undefined",
+    "extraIsNull": false,
+    "extraObjectKeys": [],
+    "requestInfo": null
+  },
+  "dataType": "object",
+  "isArray": false,
+  "keys": [
+    "params",
+    "extra",
+    "timestamp",
+    "paramsType",
+    "paramsIsNull",
+    "paramsIsArray",
+    "paramsObjectKeys",
+    "extraType",
+    "extraIsNull",
+    "extraObjectKeys",
+    "requestInfo"
+  ]
+}

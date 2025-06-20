@@ -1,0 +1,278 @@
+{
+  "cloze_create_people": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_find_people": {
+    "type": "object",
+    "properties": {
+      "freeformquery": {
+        "type": "string",
+        "description": "Search query for finding people by name, email, or phone number. For best results with email searches, use the exact email address."
+      },
+      "segment": {
+        "type": "string",
+        "enum": [
+          "customer",
+          "partner",
+          "competitor",
+          "family",
+          "friend",
+          "network",
+          "coworker",
+          "none"
+        ],
+        "description": "Filter results by person segment (e.g., \"customer\", \"partner\", \"competitor\")"
+      },
+      "stage": {
+        "type": "string",
+        "enum": [
+          "lead",
+          "future",
+          "current",
+          "past",
+          "out"
+        ],
+        "description": "Filter results by person stage (e.g., \"lead\", \"future\", \"current\", \"past\", \"out\")"
+      },
+      "pagesize": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 100,
+        "description": "Number of results to return per page. Values must be between 1 and 100. Defaults to 10 if not specified."
+      },
+      "pagenumber": {
+        "type": "number",
+        "minimum": 1,
+        "description": "Page number to retrieve. Starts at 1 for the first page. Defaults to 1 if not specified."
+      }
+    },
+    "required": [
+      "freeformquery"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  },
+  "cloze_update_people": {
+    "type": "object",
+    "properties": {
+      "syncKey": {
+        "type": "string",
+        "description": "Unique identifier for the person (preferred if available)"
+      },
+      "emails": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string",
+              "format": "email"
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "work": {
+              "type": "boolean"
+            },
+            "personal": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "description": "Email addresses for the person (required if syncKey not provided)"
+      },
+      "name": {
+        "type": "string",
+        "description": "Full name of the person"
+      },
+      "first": {
+        "type": "string",
+        "description": "First name of the person"
+      },
+      "last": {
+        "type": "string",
+        "description": "Last name of the person"
+      },
+      "phones": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "work": {
+              "type": "boolean"
+            },
+            "mobile": {
+              "type": "boolean"
+            },
+            "home": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "description": "Phone numbers for the person"
+      },
+      "company": {
+        "type": "string",
+        "description": "Company name"
+      },
+      "job_title": {
+        "type": "string",
+        "description": "Job title"
+      },
+      "segment": {
+        "type": "string",
+        "enum": [
+          "customer",
+          "partner",
+          "competitor",
+          "family",
+          "friend",
+          "network",
+          "coworker",
+          "none"
+        ],
+        "description": "Person segment (customer, partner, competitor, family, friend, network, coworker, none)"
+      },
+      "stage": {
+        "type": "string",
+        "enum": [
+          "lead",
+          "future",
+          "current",
+          "past",
+          "out"
+        ],
+        "description": "Person stage (lead, future, current, past, out)"
+      },
+      "location": {
+        "type": "string",
+        "description": "Location of the person (e.g., \"New York, NY\")"
+      },
+      "addresses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "primary": {
+              "type": "boolean"
+            },
+            "work": {
+              "type": "boolean"
+            },
+            "home": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "description": "Structured addresses for the person"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Tags for the person"
+      },
+      "customFields": {
+        "type": "object",
+        "additionalProperties": {},
+        "description": "Custom fields for the person"
+      }
+    },
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  },
+  "cloze_delete_people": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_direct_find_people": {
+    "type": "object",
+    "properties": {
+      "freeformquery": {
+        "type": "string",
+        "description": "Search query (name, email, or phone)"
+      }
+    },
+    "required": [
+      "freeformquery"
+    ]
+  },
+  "cloze_create_people_tag": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_delete_people_tag": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_update_people_tag": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_read_people_tag": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_add_people_location": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_get_people_locations": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_find_company": {},
+  "cloze_create_company_tag": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_get_company_locations": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_create_project": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_metadata_get_segments": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_health_health_connection_status": {
+    "type": "object",
+    "properties": {}
+  },
+  "cloze_communication_add_note": {}
+}

@@ -1,0 +1,61 @@
+[2025-05-15T14:34:09.172Z] [INFO] Starting Cloze CRM MCP server...
+[2025-05-15T14:34:09.173Z] [INFO] Environment: MCP Mode: true, Claude Desktop: true
+[2025-05-15T14:34:09.173Z] [INFO] Creating MCP server
+[2025-05-15T14:34:09.174Z] [INFO] MCP server created successfully
+[2025-05-15T14:34:09.174Z] [INFO] Registering tools with the server (pre-connection)
+[2025-05-15T14:34:09.224Z] [INFO] Successfully registered tool: cloze_create_people
+[2025-05-15T14:34:09.224Z] [INFO] Registered tool: cloze_create_people
+[2025-05-15T14:34:09.225Z] [INFO] Successfully registered tool: cloze_find_people
+[2025-05-15T14:34:09.225Z] [INFO] Registered tool: cloze_find_people
+[2025-05-15T14:34:09.227Z] [INFO] Successfully registered tool: cloze_update_people
+[2025-05-15T14:34:09.227Z] [INFO] Registered tool: cloze_update_people
+[2025-05-15T14:34:09.227Z] [INFO] Successfully registered tool: cloze_delete_people
+[2025-05-15T14:34:09.227Z] [INFO] Registered tool: cloze_delete_people
+[2025-05-15T14:34:09.227Z] [INFO] Registering tools with the server
+[2025-05-15T14:34:09.228Z] [INFO] Creating debug tool for parameter tracing
+[2025-05-15T14:34:09.228Z] [INFO] Environment variables: DEBUG_SCHEMA=undefined, MCP_MODE=true
+[2025-05-15T14:34:09.228Z] [INFO] Debug mode is DISABLED for schema logging
+[2025-05-15T14:34:09.229Z] [INFO] Tools registered successfully
+[2025-05-15T14:34:09.229Z] [ERROR] Failed to register tool cloze_create_people: Tool cloze_create_people is already registered
+[2025-05-15T14:34:09.229Z] [ERROR] Failed to register tool cloze_find_people: Tool cloze_find_people is already registered
+[2025-05-15T14:34:09.229Z] [ERROR] Failed to register tool cloze_update_people: Tool cloze_update_people is already registered
+[2025-05-15T14:34:09.229Z] [ERROR] Failed to register tool cloze_delete_people: Tool cloze_delete_people is already registered
+[2025-05-15T14:34:09.233Z] [INFO] Debug tool created successfully
+[2025-05-15T14:34:09.233Z] [INFO] Registering direct tool with direct handler
+[2025-05-15T14:34:09.233Z] [INFO] Registered direct tool with enhanced schema: cloze_direct_find_people
+[2025-05-15T14:34:09.235Z] [INFO] Successfully registered tool: cloze_read_people_tag
+[2025-05-15T14:34:09.235Z] [INFO] Successfully registered tool: cloze_create_people_tag
+[2025-05-15T14:34:09.236Z] [INFO] Successfully registered tool: cloze_update_people_tag
+[2025-05-15T14:34:09.236Z] [INFO] Successfully registered tool: cloze_delete_people_tag
+[2025-05-15T14:34:09.237Z] [INFO] Successfully registered tool: cloze_add_people_location
+[2025-05-15T14:34:09.237Z] [INFO] Successfully registered tool: cloze_get_people_locations
+[2025-05-15T14:34:09.240Z] [INFO] Successfully registered tool: cloze_find_nearby_people
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_find_company
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_list_companies
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_update_company
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_add_company_location
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_find_nearby_companies
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_create_company
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_create_company_tag
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_update_company_tag
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_read_company_tag
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_delete_company_tag
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_get_company_locations
+[2025-05-15T14:34:09.242Z] [ERROR] Failed to register tool cloze_add_company_location: Tool cloze_add_company_location is already registered
+[2025-05-15T14:34:09.242Z] [ERROR] Failed to register tool cloze_find_nearby_companies: Tool cloze_find_nearby_companies is already registered
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_create_project
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_list_projects
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_update_project
+[2025-05-15T14:34:09.242Z] [INFO] Successfully registered tool: cloze_find_project
+[2025-05-15T14:34:09.243Z] [INFO] Successfully registered tool: cloze_communication_add_note
+[2025-05-15T14:34:09.243Z] [INFO] Successfully registered tool: cloze_communication_log_email
+[2025-05-15T14:34:09.243Z] [INFO] Successfully registered tool: cloze_communication_add_meeting
+[2025-05-15T14:34:09.243Z] [INFO] Successfully registered tool: cloze_metadata_get_segments
+[2025-05-15T14:34:09.243Z] [INFO] Successfully registered tool: cloze_metadata_get_stages
+[2025-05-15T14:34:09.243Z] [INFO] Successfully registered tool: cloze_metadata_raw
+[2025-05-15T14:34:09.244Z] [INFO] Successfully registered tool: cloze_health_health_check
+[2025-05-15T14:34:09.244Z] [INFO] Successfully registered tool: cloze_health_health_connection_status
+[2025-05-15T14:34:09.244Z] [INFO] Successfully registered tool: cloze_health_health_reset_connection
+[2025-05-15T14:34:09.731Z] [INFO] Connecting server to transport
+[2025-05-15T14:34:09.731Z] [INFO] Server connected to transport
+[2025-05-15T14:34:09.731Z] [INFO] Cloze CRM MCP server initialized and ready

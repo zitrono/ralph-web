@@ -1,0 +1,809 @@
+[2025-05-15T13:37:10.153Z] [DEBUG] Loading configuration from environment variables
+[2025-05-15T13:37:10.155Z] [DEBUG] Configuration loaded successfully
+[2025-05-15T13:37:10.157Z] [INFO] Starting Cloze CRM MCP server...
+[2025-05-15T13:37:10.157Z] [INFO] Environment: MCP Mode: true, Claude Desktop: true
+[2025-05-15T13:37:10.157Z] [INFO] Creating MCP server
+[2025-05-15T13:37:10.157Z] [DEBUG] Error handlers set up
+[2025-05-15T13:37:10.157Z] [INFO] MCP server created successfully
+[2025-05-15T13:37:10.158Z] [INFO] Registering tools with the server (pre-connection)
+[2025-05-15T13:37:10.217Z] [DEBUG] Creating Axios instance for Cloze API
+[2025-05-15T13:37:10.219Z] [DEBUG] Registering tool: cloze_create_people
+[2025-05-15T13:37:10.219Z] [DEBUG] Using direct schema object for cloze_create_people
+[2025-05-15T13:37:10.219Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.219Z] [INFO] Successfully registered tool: cloze_create_people
+[2025-05-15T13:37:10.219Z] [INFO] Registered tool: cloze_create_people
+[2025-05-15T13:37:10.220Z] [DEBUG] Registering tool: cloze_find_people
+[2025-05-15T13:37:10.220Z] [DEBUG] Using direct schema object for cloze_find_people
+[2025-05-15T13:37:10.220Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.220Z] [INFO] Successfully registered tool: cloze_find_people
+[2025-05-15T13:37:10.220Z] [INFO] Registered tool: cloze_find_people
+[2025-05-15T13:37:10.221Z] [DEBUG] Registering tool: cloze_update_people
+[2025-05-15T13:37:10.221Z] [DEBUG] Using direct schema object for cloze_update_people
+[2025-05-15T13:37:10.221Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.221Z] [INFO] Successfully registered tool: cloze_update_people
+[2025-05-15T13:37:10.221Z] [INFO] Registered tool: cloze_update_people
+[2025-05-15T13:37:10.222Z] [DEBUG] Registering tool: cloze_delete_people
+[2025-05-15T13:37:10.222Z] [DEBUG] Using direct schema object for cloze_delete_people
+[2025-05-15T13:37:10.222Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.222Z] [INFO] Successfully registered tool: cloze_delete_people
+[2025-05-15T13:37:10.222Z] [INFO] Registered tool: cloze_delete_people
+[2025-05-15T13:37:10.222Z] [INFO] Registering tools with the server
+[2025-05-15T13:37:10.223Z] [INFO] Creating debug tool for parameter tracing
+[2025-05-15T13:37:10.223Z] [INFO] Environment variables: DEBUG_SCHEMA=true, MCP_MODE=true
+[2025-05-15T13:37:10.223Z] [INFO] Debug mode is ENABLED for schema logging
+[2025-05-15T13:37:10.224Z] [INFO] Tools registered successfully
+[2025-05-15T13:37:10.225Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_people: {}
+[2025-05-15T13:37:10.225Z] [DEBUG] Registering tool: cloze_create_people
+[2025-05-15T13:37:10.225Z] [DEBUG] Using direct schema object for cloze_create_people
+[2025-05-15T13:37:10.225Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.225Z] [DEBUG] Converting schema for cloze_find_people to JSON Schema
+[2025-05-15T13:37:10.226Z] [DEBUG] Successfully converted schema for cloze_find_people
+[2025-05-15T13:37:10.226Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_people: {
+  "type": "object",
+  "properties": {
+    "freeformquery": {
+      "type": "string",
+      "description": "Search query for finding people by name, email, or phone number. For best results with email searches, use the exact email address."
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Filter results by person segment (e.g., \"customer\", \"partner\", \"competitor\")"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Filter results by person stage (e.g., \"lead\", \"future\", \"current\", \"past\", \"out\")"
+    },
+    "pagesize": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Number of results to return per page. Values must be between 1 and 100. Defaults to 10 if not specified."
+    },
+    "pagenumber": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Page number to retrieve. Starts at 1 for the first page. Defaults to 1 if not specified."
+    }
+  },
+  "required": [
+    "freeformquery"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+[2025-05-15T13:37:10.226Z] [DEBUG] Registering tool: cloze_find_people
+[2025-05-15T13:37:10.226Z] [DEBUG] Using shape from Zod schema for cloze_find_people
+[2025-05-15T13:37:10.226Z] [DEBUG] Converting schema for cloze_find_people to JSON Schema
+[2025-05-15T13:37:10.226Z] [DEBUG] Successfully converted schema for cloze_find_people
+[2025-05-15T13:37:10.226Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_people: {
+  "type": "object",
+  "properties": {
+    "freeformquery": {
+      "type": "string",
+      "description": "Search query for finding people by name, email, or phone number. For best results with email searches, use the exact email address."
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Filter results by person segment (e.g., \"customer\", \"partner\", \"competitor\")"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Filter results by person stage (e.g., \"lead\", \"future\", \"current\", \"past\", \"out\")"
+    },
+    "pagesize": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Number of results to return per page. Values must be between 1 and 100. Defaults to 10 if not specified."
+    },
+    "pagenumber": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Page number to retrieve. Starts at 1 for the first page. Defaults to 1 if not specified."
+    }
+  },
+  "required": [
+    "freeformquery"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+[2025-05-15T13:37:10.226Z] [DEBUG] Converting schema for cloze_update_people to JSON Schema
+[2025-05-15T13:37:10.226Z] [DEBUG] Successfully converted schema for cloze_update_people
+[2025-05-15T13:37:10.226Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_people: {
+  "type": "object",
+  "properties": {
+    "syncKey": {
+      "type": "string",
+      "description": "Unique identifier for the person (preferred if available)"
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "email"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "personal": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Email addresses for the person (required if syncKey not provided)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the person"
+    },
+    "first": {
+      "type": "string",
+      "description": "First name of the person"
+    },
+    "last": {
+      "type": "string",
+      "description": "Last name of the person"
+    },
+    "phones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "mobile": {
+            "type": "boolean"
+          },
+          "home": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Phone numbers for the person"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Person segment (customer, partner, competitor, family, friend, network, coworker, none)"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Person stage (lead, future, current, past, out)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of the person (e.g., \"New York, NY\")"
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "home": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Structured addresses for the person"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for the person"
+    },
+    "customFields": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Custom fields for the person"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+[2025-05-15T13:37:10.226Z] [DEBUG] Registering tool: cloze_update_people
+[2025-05-15T13:37:10.226Z] [DEBUG] Using direct schema object for cloze_update_people
+[2025-05-15T13:37:10.226Z] [DEBUG] Converting schema for cloze_update_people to JSON Schema
+[2025-05-15T13:37:10.226Z] [DEBUG] Successfully converted schema for cloze_update_people
+[2025-05-15T13:37:10.226Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_people: {
+  "type": "object",
+  "properties": {
+    "syncKey": {
+      "type": "string",
+      "description": "Unique identifier for the person (preferred if available)"
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "email"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "personal": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Email addresses for the person (required if syncKey not provided)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the person"
+    },
+    "first": {
+      "type": "string",
+      "description": "First name of the person"
+    },
+    "last": {
+      "type": "string",
+      "description": "Last name of the person"
+    },
+    "phones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "mobile": {
+            "type": "boolean"
+          },
+          "home": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Phone numbers for the person"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Person segment (customer, partner, competitor, family, friend, network, coworker, none)"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Person stage (lead, future, current, past, out)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of the person (e.g., \"New York, NY\")"
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "work": {
+            "type": "boolean"
+          },
+          "home": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Structured addresses for the person"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for the person"
+    },
+    "customFields": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Custom fields for the person"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+[2025-05-15T13:37:10.227Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_people: {}
+[2025-05-15T13:37:10.227Z] [DEBUG] Registering tool: cloze_delete_people
+[2025-05-15T13:37:10.227Z] [DEBUG] Using direct schema object for cloze_delete_people
+[2025-05-15T13:37:10.227Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.227Z] [ERROR] Failed to register tool cloze_create_people: Tool cloze_create_people is already registered
+[2025-05-15T13:37:10.227Z] [ERROR] Failed to register tool cloze_find_people: Tool cloze_find_people is already registered
+[2025-05-15T13:37:10.227Z] [ERROR] Failed to register tool cloze_update_people: Tool cloze_update_people is already registered
+[2025-05-15T13:37:10.227Z] [ERROR] Failed to register tool cloze_delete_people: Tool cloze_delete_people is already registered
+[2025-05-15T13:37:10.230Z] [INFO] Debug tool created successfully
+[2025-05-15T13:37:10.230Z] [INFO] Registering direct tool with direct handler
+[2025-05-15T13:37:10.230Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_direct_find_people: {
+  "type": "object",
+  "properties": {
+    "freeformquery": {
+      "type": "string",
+      "description": "Search query (name, email, or phone)"
+    }
+  },
+  "required": [
+    "freeformquery"
+  ]
+}
+[2025-05-15T13:37:10.230Z] [INFO] Registered direct tool with enhanced schema: cloze_direct_find_people
+[2025-05-15T13:37:10.234Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_people_tag: {}
+[2025-05-15T13:37:10.234Z] [DEBUG] Registering tool: cloze_create_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] Using direct schema object for cloze_create_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_people_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.234Z] [INFO] Successfully registered tool: cloze_create_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] Registered tool: cloze_create_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_people_tag: {}
+[2025-05-15T13:37:10.234Z] [DEBUG] Registering tool: cloze_delete_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] Using direct schema object for cloze_delete_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_people_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.234Z] [INFO] Successfully registered tool: cloze_delete_people_tag
+[2025-05-15T13:37:10.234Z] [DEBUG] Registered tool: cloze_delete_people_tag
+[2025-05-15T13:37:10.235Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_people_tag: {}
+[2025-05-15T13:37:10.235Z] [DEBUG] Registering tool: cloze_update_people_tag
+[2025-05-15T13:37:10.235Z] [DEBUG] Using direct schema object for cloze_update_people_tag
+[2025-05-15T13:37:10.235Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_people_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.235Z] [INFO] Successfully registered tool: cloze_update_people_tag
+[2025-05-15T13:37:10.235Z] [DEBUG] Registered tool: cloze_update_people_tag
+[2025-05-15T13:37:10.236Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_read_people_tag: {}
+[2025-05-15T13:37:10.236Z] [DEBUG] Registering tool: cloze_read_people_tag
+[2025-05-15T13:37:10.236Z] [DEBUG] Using direct schema object for cloze_read_people_tag
+[2025-05-15T13:37:10.236Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_read_people_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.236Z] [INFO] Successfully registered tool: cloze_read_people_tag
+[2025-05-15T13:37:10.236Z] [DEBUG] Registered tool: cloze_read_people_tag
+[2025-05-15T13:37:10.237Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_nearby_people: {}
+[2025-05-15T13:37:10.237Z] [DEBUG] Registering tool: cloze_find_nearby_people
+[2025-05-15T13:37:10.237Z] [DEBUG] Using direct schema object for cloze_find_nearby_people
+[2025-05-15T13:37:10.237Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_nearby_people: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.237Z] [INFO] Successfully registered tool: cloze_find_nearby_people
+[2025-05-15T13:37:10.237Z] [DEBUG] Registered tool: cloze_find_nearby_people
+[2025-05-15T13:37:10.239Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_add_people_location: {}
+[2025-05-15T13:37:10.239Z] [DEBUG] Registering tool: cloze_add_people_location
+[2025-05-15T13:37:10.239Z] [DEBUG] Using direct schema object for cloze_add_people_location
+[2025-05-15T13:37:10.239Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_add_people_location: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.239Z] [INFO] Successfully registered tool: cloze_add_people_location
+[2025-05-15T13:37:10.239Z] [DEBUG] Registered tool: cloze_add_people_location
+[2025-05-15T13:37:10.239Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_get_people_locations: {}
+[2025-05-15T13:37:10.239Z] [DEBUG] Registering tool: cloze_get_people_locations
+[2025-05-15T13:37:10.239Z] [DEBUG] Using direct schema object for cloze_get_people_locations
+[2025-05-15T13:37:10.239Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_get_people_locations: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.239Z] [INFO] Successfully registered tool: cloze_get_people_locations
+[2025-05-15T13:37:10.239Z] [DEBUG] Registered tool: cloze_get_people_locations
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_company: {}
+[2025-05-15T13:37:10.244Z] [DEBUG] Registering tool: cloze_find_company
+[2025-05-15T13:37:10.244Z] [DEBUG] Using direct schema object for cloze_find_company
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_company: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.244Z] [INFO] Successfully registered tool: cloze_find_company
+[2025-05-15T13:37:10.244Z] [DEBUG] Registered tool: cloze_find_company
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_list_companies: {}
+[2025-05-15T13:37:10.244Z] [DEBUG] Registering tool: cloze_list_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] Using direct schema object for cloze_list_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_list_companies: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.244Z] [INFO] Successfully registered tool: cloze_list_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] Registered tool: cloze_list_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_add_company_location: {}
+[2025-05-15T13:37:10.244Z] [DEBUG] Registering tool: cloze_add_company_location
+[2025-05-15T13:37:10.244Z] [DEBUG] Using direct schema object for cloze_add_company_location
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_add_company_location: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.244Z] [INFO] Successfully registered tool: cloze_add_company_location
+[2025-05-15T13:37:10.244Z] [DEBUG] Registered tool: cloze_add_company_location
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_add_company_location: {}
+[2025-05-15T13:37:10.244Z] [DEBUG] Registering tool: cloze_add_company_location
+[2025-05-15T13:37:10.244Z] [DEBUG] Using direct schema object for cloze_add_company_location
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_add_company_location: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_nearby_companies: {}
+[2025-05-15T13:37:10.244Z] [DEBUG] Registering tool: cloze_find_nearby_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] Using direct schema object for cloze_find_nearby_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_nearby_companies: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.244Z] [INFO] Successfully registered tool: cloze_find_nearby_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] Registered tool: cloze_find_nearby_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_nearby_companies: {}
+[2025-05-15T13:37:10.244Z] [DEBUG] Registering tool: cloze_find_nearby_companies
+[2025-05-15T13:37:10.244Z] [DEBUG] Using direct schema object for cloze_find_nearby_companies
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_nearby_companies: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_company: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_update_company
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_update_company
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_company: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_update_company
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_update_company
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_company: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_create_company
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_create_company
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_company: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_create_company
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_create_company
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_company_tag: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_create_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_create_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_company_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_create_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_create_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_company_tag: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_delete_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_delete_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_delete_company_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_delete_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_delete_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_company_tag: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_update_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_update_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_company_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_update_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_update_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_read_company_tag: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_read_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_read_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_read_company_tag: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_read_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_read_company_tag
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_get_company_locations: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_get_company_locations
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_get_company_locations
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_get_company_locations: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_get_company_locations
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_get_company_locations
+[2025-05-15T13:37:10.245Z] [ERROR] Failed to register tool cloze_add_company_location: Tool cloze_add_company_location is already registered
+[2025-05-15T13:37:10.245Z] [ERROR] Failed to register tool cloze_find_nearby_companies: Tool cloze_find_nearby_companies is already registered
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_project: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_create_project
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_create_project
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_create_project: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_create_project
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_create_project
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_project: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_find_project
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_find_project
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_find_project: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_find_project
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_find_project
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_project: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_update_project
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_update_project
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_update_project: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_update_project
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_update_project
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_list_projects: {}
+[2025-05-15T13:37:10.245Z] [DEBUG] Registering tool: cloze_list_projects
+[2025-05-15T13:37:10.245Z] [DEBUG] Using direct schema object for cloze_list_projects
+[2025-05-15T13:37:10.245Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_list_projects: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.245Z] [INFO] Successfully registered tool: cloze_list_projects
+[2025-05-15T13:37:10.245Z] [DEBUG] Registered tool: cloze_list_projects
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_metadata_get_segments: {}
+[2025-05-15T13:37:10.246Z] [DEBUG] Registering tool: cloze_metadata_get_segments
+[2025-05-15T13:37:10.246Z] [DEBUG] Using direct schema object for cloze_metadata_get_segments
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_metadata_get_segments: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.246Z] [INFO] Successfully registered tool: cloze_metadata_get_segments
+[2025-05-15T13:37:10.246Z] [DEBUG] Registered tool: cloze_metadata_get_segments
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_metadata_get_stages: {}
+[2025-05-15T13:37:10.246Z] [DEBUG] Registering tool: cloze_metadata_get_stages
+[2025-05-15T13:37:10.246Z] [DEBUG] Using direct schema object for cloze_metadata_get_stages
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_metadata_get_stages: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.246Z] [INFO] Successfully registered tool: cloze_metadata_get_stages
+[2025-05-15T13:37:10.246Z] [DEBUG] Registered tool: cloze_metadata_get_stages
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_metadata_raw: {}
+[2025-05-15T13:37:10.246Z] [DEBUG] Registering tool: cloze_metadata_raw
+[2025-05-15T13:37:10.246Z] [DEBUG] Using direct schema object for cloze_metadata_raw
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_metadata_raw: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.246Z] [INFO] Successfully registered tool: cloze_metadata_raw
+[2025-05-15T13:37:10.246Z] [DEBUG] Registered tool: cloze_metadata_raw
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_health_health_connection_status: {}
+[2025-05-15T13:37:10.246Z] [DEBUG] Registering tool: cloze_health_health_connection_status
+[2025-05-15T13:37:10.246Z] [DEBUG] Using direct schema object for cloze_health_health_connection_status
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_health_health_connection_status: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.246Z] [INFO] Successfully registered tool: cloze_health_health_connection_status
+[2025-05-15T13:37:10.246Z] [DEBUG] Registered tool: cloze_health_health_connection_status
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_health_health_check: {}
+[2025-05-15T13:37:10.246Z] [DEBUG] Registering tool: cloze_health_health_check
+[2025-05-15T13:37:10.246Z] [DEBUG] Using direct schema object for cloze_health_health_check
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_health_health_check: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.246Z] [INFO] Successfully registered tool: cloze_health_health_check
+[2025-05-15T13:37:10.246Z] [DEBUG] Registered tool: cloze_health_health_check
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_health_health_reset_connection: {}
+[2025-05-15T13:37:10.246Z] [DEBUG] Registering tool: cloze_health_health_reset_connection
+[2025-05-15T13:37:10.246Z] [DEBUG] Using direct schema object for cloze_health_health_reset_connection
+[2025-05-15T13:37:10.246Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_health_health_reset_connection: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.246Z] [INFO] Successfully registered tool: cloze_health_health_reset_connection
+[2025-05-15T13:37:10.246Z] [DEBUG] Registered tool: cloze_health_health_reset_connection
+[2025-05-15T13:37:10.247Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_communication_add_note: {}
+[2025-05-15T13:37:10.247Z] [DEBUG] Registering tool: cloze_communication_add_note
+[2025-05-15T13:37:10.247Z] [DEBUG] Using direct schema object for cloze_communication_add_note
+[2025-05-15T13:37:10.247Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_communication_add_note: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.247Z] [INFO] Successfully registered tool: cloze_communication_add_note
+[2025-05-15T13:37:10.247Z] [DEBUG] Registered tool: cloze_communication_add_note
+[2025-05-15T13:37:10.247Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_communication_add_meeting: {}
+[2025-05-15T13:37:10.247Z] [DEBUG] Registering tool: cloze_communication_add_meeting
+[2025-05-15T13:37:10.247Z] [DEBUG] Using direct schema object for cloze_communication_add_meeting
+[2025-05-15T13:37:10.247Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_communication_add_meeting: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.247Z] [INFO] Successfully registered tool: cloze_communication_add_meeting
+[2025-05-15T13:37:10.247Z] [DEBUG] Registered tool: cloze_communication_add_meeting
+[2025-05-15T13:37:10.247Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_communication_log_email: {}
+[2025-05-15T13:37:10.247Z] [DEBUG] Registering tool: cloze_communication_log_email
+[2025-05-15T13:37:10.247Z] [DEBUG] Using direct schema object for cloze_communication_log_email
+[2025-05-15T13:37:10.247Z] [DEBUG] SCHEMA_DEBUG: Schema for cloze_communication_log_email: {
+  "type": "object",
+  "properties": {}
+}
+[2025-05-15T13:37:10.247Z] [INFO] Successfully registered tool: cloze_communication_log_email
+[2025-05-15T13:37:10.247Z] [DEBUG] Registered tool: cloze_communication_log_email
+[2025-05-15T13:37:10.726Z] [INFO] Connecting server to transport
+[2025-05-15T13:37:10.726Z] [INFO] Server connected to transport
+[2025-05-15T13:37:10.727Z] [INFO] Cloze CRM MCP server initialized and ready

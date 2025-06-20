@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "freeformquery": {
+      "type": "string",
+      "description": "Search query for finding people by name, email, or phone number. For best results with email searches, use the exact email address.",
+      "examples": [
+        "john.doe@example.com",
+        "Jane Smith",
+        "+1 555-123-4567"
+      ]
+    },
+    "segment": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "partner",
+        "competitor",
+        "family",
+        "friend",
+        "network",
+        "coworker",
+        "none"
+      ],
+      "description": "Filter results by person segment (e.g., \"customer\", \"partner\", \"competitor\")",
+      "examples": [
+        "customer",
+        "partner",
+        "competitor"
+      ],
+      "enumDescriptions": {
+        "customer": "Client or customer relationship",
+        "partner": "Business partner or ally",
+        "competitor": "Competitive relationship",
+        "family": "Family relation",
+        "friend": "Personal friend",
+        "network": "Professional connection",
+        "coworker": "Works at the same organization",
+        "none": "No specific segment"
+      }
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "lead",
+        "future",
+        "current",
+        "past",
+        "out"
+      ],
+      "description": "Filter results by person stage (e.g., \"lead\", \"future\", \"current\", \"past\", \"out\")",
+      "examples": [
+        "lead",
+        "current",
+        "past"
+      ],
+      "enumDescriptions": {
+        "lead": "Potential contact or lead",
+        "future": "Promising future contact",
+        "current": "Active current relationship",
+        "past": "Past or inactive relationship",
+        "out": "Lost contact or opportunity"
+      }
+    },
+    "pagesize": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Number of results to return per page. Values must be between 1 and 100. Defaults to 10 if not specified.",
+      "examples": [
+        10,
+        25,
+        50
+      ]
+    },
+    "pagenumber": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Page number to retrieve. Starts at 1 for the first page. Defaults to 1 if not specified.",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "required": [
+    "freeformquery"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

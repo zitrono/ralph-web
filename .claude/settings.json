@@ -1,6 +1,30 @@
 {
   "permissions": {
-    "allow": ["*"],
-    "deny": []
+    "allow": [
+      "Read(*)",
+      "Glob(*)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(npm test)",
+      "Bash(npm run validate)",
+      "Bash(node tests/unified-test.js ralph)",
+      "Bash(nc -z*)",
+      "Bash(lsof*)"
+    ],
+    "ask": [
+      "Write(*)",
+      "Edit(*)",
+      "Bash(git commit*)",
+      "Bash(git add*)",
+      "Bash(npm install*)",
+      "Bash(npm run*)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(rm -rf*)",
+      "Bash(git push origin main)",
+      "Write(tests/jace-ai-site.pom.js)"
+    ]
   }
 }
